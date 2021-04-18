@@ -1,0 +1,50 @@
+.windowTop {
+  width: auto;
+  background-color: #1b1b1b;
+  display: flex;
+  align-items: flex-start;
+}
+
+.redDot {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  background: #ed6a5e;
+  margin: 10px;
+}
+
+.yellowDot {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  background: #f4be4f;
+  margin: 10px;
+  margin-left: 0px;
+}
+
+.greenDot {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  background: #62c655;
+  margin: 10px;
+  margin-left: 0px;
+}
+
+.buttonContainer {
+  width: 100%;
+  display: flex;
+}
+
+.viewIcon {
+  height: 15px;
+  width: auto;
+  border: none;
+}
+
+.windowBottom {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: #1b1b1b;
+}
