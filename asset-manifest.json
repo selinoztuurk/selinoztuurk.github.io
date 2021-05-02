@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/typortraits/static/css/main.f4c94735.chunk.css",
+    "main.js": "/typortraits/static/js/main.755a0e58.chunk.js",
+    "main.js.map": "/typortraits/static/js/main.755a0e58.chunk.js.map",
+    "runtime-main.js": "/typortraits/static/js/runtime-main.9e9dd677.js",
+    "runtime-main.js.map": "/typortraits/static/js/runtime-main.9e9dd677.js.map",
+    "static/js/2.3060d2b0.chunk.js": "/typortraits/static/js/2.3060d2b0.chunk.js",
+    "static/js/2.3060d2b0.chunk.js.map": "/typortraits/static/js/2.3060d2b0.chunk.js.map",
+    "index.html": "/typortraits/index.html",
+    "static/css/main.f4c94735.chunk.css.map": "/typortraits/static/css/main.f4c94735.chunk.css.map",
+    "static/js/2.3060d2b0.chunk.js.LICENSE.txt": "/typortraits/static/js/2.3060d2b0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9e9dd677.js",
+    "static/js/2.3060d2b0.chunk.js",
+    "static/css/main.f4c94735.chunk.css",
+    "static/js/main.755a0e58.chunk.js"
+  ]
+}
