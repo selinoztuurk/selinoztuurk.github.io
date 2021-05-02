@@ -31,7 +31,11 @@ const ZoomCall = () => {
             fontWeight: 700,
           }}
         >
-          <img className="secureIcon" src="/icons/secure.png" alt="secure" />
+          <img
+            className="secureIcon"
+            src={process.env.PUBLIC_URL + "/icons/secure.png"}
+            alt="secure"
+          />
           <div className="recording"></div>
           Recording
         </div>
@@ -44,13 +48,13 @@ const ZoomCall = () => {
             {frameMode === 0 ? (
               <img
                 className="viewIcon"
-                src="/icons/view-icon-gallery.png"
+                src={process.env.PUBLIC_URL + "/icons/view-icon-gallery.png"}
                 alt="view_icon"
               />
             ) : (
               <img
                 className="viewIcon"
-                src="/icons/view-icon-speaker.png"
+                src={process.env.PUBLIC_URL + "/icons/view-icon-speaker.png"}
                 alt="view_icon"
               />
             )}
@@ -74,12 +78,12 @@ const ZoomCall = () => {
         <div className="first" style={{ display: "flex" }}>
           <img
             className="bottomIcon"
-            src="/icons/bottom-icon-08.png"
+            src={process.env.PUBLIC_URL + "/icons/bottom-icon-08.png"}
             alt="unmute"
           />
           <img
             className="bottomIcon"
-            src="/icons/bottom-icon-09.png"
+            src={process.env.PUBLIC_URL + "/icons/bottom-icon-09.png"}
             alt="stopvideo"
           />
         </div>
@@ -87,27 +91,27 @@ const ZoomCall = () => {
           <div className="second" style={{ display: "flex" }}>
             <img
               className="bottomIcon"
-              src="/icons/bottom-icon-10.png"
+              src={process.env.PUBLIC_URL + "/icons/bottom-icon-10.png"}
               alt="participants"
             />
             <img
               className="bottomIcon"
-              src="/icons/bottom-icon-11.png"
+              src={process.env.PUBLIC_URL + "/icons/bottom-icon-11.png"}
               alt="chat"
             />
             <img
               className="bottomIcon"
-              src="/icons/bottom-icon-12.png"
+              src={process.env.PUBLIC_URL + "/icons/bottom-icon-12.png"}
               alt="sharescreen"
             />
             <img
               className="bottomIcon"
-              src="/icons/bottom-icon-13.png"
+              src={process.env.PUBLIC_URL + "/icons/bottom-icon-13.png"}
               alt="record"
             />
             <img
               className="bottomIcon"
-              src="/icons/bottom-icon-14.png"
+              src={process.env.PUBLIC_URL + "/icons/bottom-icon-14.png"}
               alt="reactions"
             />
           </div>
@@ -115,7 +119,7 @@ const ZoomCall = () => {
         <div className="third" style={{ display: "flex" }}>
           <img
             className="bottomIcon"
-            src="/icons/bottom-icon-15.png"
+            src={process.env.PUBLIC_URL + "/icons/bottom-icon-15.png"}
             alt="enjoy"
           />
         </div>

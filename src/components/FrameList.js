@@ -99,7 +99,7 @@ const FrameList = ({ frameList, frameMode }) => {
         <div style={{ textAlign: "center", marginTop: "10px" }}>
           <img
             className="focusedFrameImage"
-            src={focusedFrame.src}
+            src={process.env.PUBLIC_URL + focusedFrame.src}
             alt={focusedFrame.alt}
             id={focusedFrame.id}
           />
@@ -120,7 +120,7 @@ const FrameList = ({ frameList, frameMode }) => {
               <div>
                 <img
                   className="arrowIcon"
-                  src="/icons/arrow-left.png"
+                  src={process.env.PUBLIC_URL + "/icons/arrow-left.png"}
                   alt="left"
                   onClick={() =>
                     setFocusedFrame(
@@ -140,8 +140,8 @@ const FrameList = ({ frameList, frameMode }) => {
               <div>
                 <img
                   className="arrowIcon"
-                  src="/icons/arrow-right.png"
-                  alt="left"
+                  src={process.env.PUBLIC_URL + "/icons/arrow-right.png"}
+                  alt="right"
                   onClick={() =>
                     setFocusedFrame(
                       speakerViewList[
@@ -165,7 +165,7 @@ const FrameList = ({ frameList, frameMode }) => {
               <div>
                 <img
                   className="arrowIcon"
-                  src="/icons/arrow-left.png"
+                  src={process.env.PUBLIC_URL + "/icons/arrow-left.png"}
                   alt="left"
                   onClick={() =>
                     setFocusedFrame(
@@ -185,8 +185,8 @@ const FrameList = ({ frameList, frameMode }) => {
               <div>
                 <img
                   className="arrowIcon"
-                  src="/icons/arrow-right.png"
-                  alt="left"
+                  src={process.env.PUBLIC_URL + "/icons/arrow-right.png"}
+                  alt="right"
                   onClick={() =>
                     setFocusedFrame(
                       speakerViewList[

@@ -10,7 +10,12 @@ const Frame = ({ src, alt, id, onFrameSelect }) => {
       }}
     >
       <div style={{ margin: "auto" }}>
-        <img className="frameImage" src={src} alt={alt} id={id} />
+        <img
+          className="frameImage"
+          src={process.env.PUBLIC_URL + src}
+          alt={alt}
+          id={id}
+        />
       </div>
     </div>
   );

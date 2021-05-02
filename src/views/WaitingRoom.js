@@ -19,7 +19,7 @@ const WaitingRoom = () => {
       <div style={{ marginTop: `${width < 600 ? "50%" : "15%"}` }}>
         <img
           className="logo"
-          src="/typortraits-logo.png"
+          src={process.env.PUBLIC_URL + "/typortraits-logo.png"}
           alt="logo"
           style={{ width: `${width < 600 ? "80%" : "30%"}`, height: "auto" }}
         />
