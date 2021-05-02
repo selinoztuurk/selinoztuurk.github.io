@@ -5,12 +5,60 @@
 
 .focusedFrameContainer {
   width: auto;
-  border: solid 5px greenyellow;
-  background-color: white;
+  background-color: black;
   display: flex !important;
 }
 
 .focusedFrameImage {
-  height: 30%;
+  height: 50%;
   width: auto;
+}
+
+.column {
+  padding-left: 3px !important;
+  padding-right: 3px !important;
+  padding-bottom: 3px !important;
+  padding-top: 0px !important;
+}
+
+#speakerSixColumns {
+  padding-left: 15% !important;
+  padding-right: 15% !important;
+}
+
+@media only screen and (max-width: 600px) {
+  #speakerSixColumns {
+    padding-left: 1px !important;
+    padding-right: 1px !important;
+    padding-top: 5% !important;
+  }
+  #speakerFourColumns {
+    padding-left: 1px !important;
+    padding-right: 1px !important;
+    padding-top: 5% !important;
+  }
+  .focusedFrameImage {
+    margin-top: 40%;
+    height: auto;
+    width: 95%;
+  }
+
+  .ui.container.seven {
+    padding-bottom: 20% !important;
+  }
+}
+
+.arrowIcon {
+  height: 15px;
+  width: auto;
+  border: none;
+  padding-right: 3px;
+  margin-top: 100%;
+}
+
+@media only screen and (min-width: 900px) {
+  .ui.container.seven {
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+  }
 }

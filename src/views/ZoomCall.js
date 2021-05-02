@@ -1,45 +1,60 @@
 import React, { useState } from "react";
 import FrameList from "../components/FrameList";
 import "./ZoomCall.css";
+import galleryViewList from "../galleryViewList";
+import speakerViewList from "../speakerViewList";
+import useWindowSize from "../hooks/useWindowSize";
 
-const frameList = [
-  { src: "/frames/avatar1.png", label: "Frame 1", id: 1 },
-  { src: "/frames/avatar2.png", label: "Frame 2", id: 2 },
-  { src: "/frames/avatar3.png", label: "Frame 3", id: 3 },
-  { src: "/frames/avatar4.png", label: "Frame 4", id: 4 },
-  { src: "/frames/avatar5.png", label: "Frame 5", id: 5 },
-  { src: "/frames/avatar6.png", label: "Frame 6", id: 6 },
-  { src: "/frames/avatar1.png", label: "Frame 1", id: 7 },
-  { src: "/frames/avatar2.png", label: "Frame 2", id: 8 },
-  { src: "/frames/avatar3.png", label: "Frame 3", id: 9 },
-  { src: "/frames/avatar4.png", label: "Frame 4", id: 10 },
-  { src: "/frames/avatar5.png", label: "Frame 5", id: 11 },
-  { src: "/frames/avatar6.png", label: "Frame 6", id: 12 },
-];
+const frameLists = [speakerViewList, galleryViewList];
 
 const ZoomCall = () => {
   const frameModes = { 0: "Speaker View", 1: "Gallery View" };
   const [frameMode, setFrameMode] = useState(1);
+  const width = useWindowSize()[0];
 
   return (
     <div>
-      <div className="windowTop">
-        <div className="redDot"></div>
-        <div className="yellowDot"></div>
-        <div className="greenDot"></div>
-      </div>
-      <div className="buttonContainer">
+      {false ? (
+        <div className="windowTop">
+          <div className="redDot"></div>
+          <div className="yellowDot"></div>
+          <div className="greenDot"></div>
+        </div>
+      ) : null}
+      <div className="upperMenuContainer">
+        <div
+          style={{
+            display: "flex",
+            marginTop: "5px",
+            fontSize: 12,
+            color: "white",
+            fontWeight: 700,
+          }}
+        >
+          <img className="secureIcon" src="/icons/secure.png" alt="secure" />
+          <div className="recording"></div>
+          Recording
+        </div>
         <div style={{ marginLeft: "auto" }}>
           <button
             className="ui grey button"
             onClick={() => setFrameMode((frameMode + 1) % 2)}
+            style={{ fontSize: 12 }}
           >
-            <img
-              className="viewIcon"
-              src="/icons/view_icon.png"
-              alt="view_icon"
-            />
-            {frameModes[(frameMode + 1) % 2]}
+            {frameMode === 0 ? (
+              <img
+                className="viewIcon"
+                src="/icons/view-icon-gallery.png"
+                alt="view_icon"
+              />
+            ) : (
+              <img
+                className="viewIcon"
+                src="/icons/view-icon-speaker.png"
+                alt="view_icon"
+              />
+            )}
+            View
           </button>
         </div>
       </div>
@@ -50,10 +65,60 @@ const ZoomCall = () => {
           }
         }}
       >
-        <FrameList frameList={frameList} frameMode={frameModes[frameMode]} />
+        <FrameList
+          frameList={frameLists[frameMode]}
+          frameMode={frameModes[frameMode]}
+        />
       </div>
       <div className="windowBottom">
-        <div>BOTTOM</div>
+        <div className="first" style={{ display: "flex" }}>
+          <img
+            className="bottomIcon"
+            src="/icons/bottom-icon-08.png"
+            alt="unmute"
+          />
+          <img
+            className="bottomIcon"
+            src="/icons/bottom-icon-09.png"
+            alt="stopvideo"
+          />
+        </div>
+        {width > 750 ? (
+          <div className="second" style={{ display: "flex" }}>
+            <img
+              className="bottomIcon"
+              src="/icons/bottom-icon-10.png"
+              alt="participants"
+            />
+            <img
+              className="bottomIcon"
+              src="/icons/bottom-icon-11.png"
+              alt="chat"
+            />
+            <img
+              className="bottomIcon"
+              src="/icons/bottom-icon-12.png"
+              alt="sharescreen"
+            />
+            <img
+              className="bottomIcon"
+              src="/icons/bottom-icon-13.png"
+              alt="record"
+            />
+            <img
+              className="bottomIcon"
+              src="/icons/bottom-icon-14.png"
+              alt="reactions"
+            />
+          </div>
+        ) : null}
+        <div className="third" style={{ display: "flex" }}>
+          <img
+            className="bottomIcon"
+            src="/icons/bottom-icon-15.png"
+            alt="enjoy"
+          />
+        </div>
       </div>
     </div>
   );

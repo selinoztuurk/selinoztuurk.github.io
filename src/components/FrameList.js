@@ -1,43 +1,48 @@
 import React, { useState } from "react";
 import Frame from "./Frame";
 import "./FrameList.css";
+import galleryViewList from "../galleryViewList.js";
+import speakerViewList from "../speakerViewList.js";
+import useWindowSize from "../hooks/useWindowSize";
 
 const FrameList = ({ frameList, frameMode }) => {
-  const [focusedFrame, setFocusedFrame] = useState(frameList[0]);
+  const [focusedFrame, setFocusedFrame] = useState(speakerViewList[0]);
+
+  const width = useWindowSize()[0];
+
+  const speakerUpperList = galleryViewList.filter(
+    (item) => !item.id.includes("logo")
+  );
 
   function onFrameSelect(id) {
-    setFocusedFrame(frameList[id - 1]);
+    var result = speakerViewList.find((item) => item.id === id);
+    setFocusedFrame(result);
   }
-
-  /*function randomlyPickedFrameList(n) {
-    var newFrameList = [];
-    var a = Array.from(Array(n).keys());
-
-    function shuffle(o) {
-      for (
-        var j, x, i = o.length;
-        i;
-        j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x
-      );
-      return o;
-    }
-
-    var randomIndices = shuffle(a);
-
-    for (var i = 0; i < randomIndices.length; i++) {
-      newFrameList = [
-        ...newFrameList,
-        frameList[randomIndices[i % frameList.length]],
-      ];
-    }
-    console.log(newFrameList);
-    return newFrameList;
-  }*/
 
   function sixFrameList(i) {
     var newFrameList = [];
-    for (var j = 0; j < 6; j++) {
-      newFrameList = [...newFrameList, frameList[(i + j) % frameList.length]];
+    for (var j = -3; j < 4; j++) {
+      if (j === 0) continue;
+      newFrameList = [
+        ...newFrameList,
+        speakerUpperList[
+          (i + j + speakerUpperList.length) % speakerUpperList.length
+        ],
+      ];
+    }
+    return newFrameList;
+  }
+
+  function fourFrameList(i) {
+    var newFrameList = [];
+    for (var j = -2; j < 3; j++) {
+      if (j === 0) continue;
+      newFrameList = [
+        ...newFrameList,
+        speakerUpperList[
+          (i + j + speakerUpperList.length) % speakerUpperList.length
+        ],
+      ];
     }
     return newFrameList;
   }
@@ -56,26 +61,42 @@ const FrameList = ({ frameList, frameMode }) => {
     );
   });
 
-  const renderedSpeakerFrameList = sixFrameList(focusedFrame.id).map(
-    (frame) => {
-      return (
-        <div className="column">
-          <Frame
-            onFrameSelect={onFrameSelect}
-            key={frame.id}
-            src={frame.src}
-            alt={frame.alt}
-            id={frame.id}
-          />
-        </div>
-      );
-    }
-  );
+  const renderedSixSpeakerFrameList = sixFrameList(
+    speakerViewList.findIndex((item) => item.id === focusedFrame.id)
+  ).map((frame) => {
+    return (
+      <div className="column">
+        <Frame
+          onFrameSelect={onFrameSelect}
+          key={frame.id}
+          src={frame.src}
+          alt={frame.alt}
+          id={frame.id}
+        />
+      </div>
+    );
+  });
+
+  const renderedFourSpeakerFrameList = fourFrameList(
+    speakerViewList.findIndex((item) => item.id === focusedFrame.id)
+  ).map((frame) => {
+    return (
+      <div className="column">
+        <Frame
+          onFrameSelect={onFrameSelect}
+          key={frame.id}
+          src={frame.src}
+          alt={frame.alt}
+          id={frame.id}
+        />
+      </div>
+    );
+  });
 
   const FocusedFrame = ({ focusedFrame }) => {
     return (
       <div className="ui container focusedFrameContainer">
-        <div style={{ margin: "auto" }}>
+        <div style={{ textAlign: "center", marginTop: "10px" }}>
           <img
             className="focusedFrameImage"
             src={focusedFrame.src}
@@ -91,9 +112,97 @@ const FrameList = ({ frameList, frameMode }) => {
     <div>
       {frameMode === "Speaker View" ? (
         <div>
-          <div className="ui doubling six column grid container">
-            {renderedSpeakerFrameList}
-          </div>
+          {width > 600 ? (
+            <div
+              className="ui eight column grid container"
+              id="speakerSixColumns"
+            >
+              <div>
+                <img
+                  className="arrowIcon"
+                  src="/icons/arrow-left.png"
+                  alt="left"
+                  onClick={() =>
+                    setFocusedFrame(
+                      speakerViewList[
+                        (speakerViewList.findIndex(
+                          (item) => item.id === focusedFrame.id
+                        ) -
+                          1 +
+                          speakerViewList.length) %
+                          speakerViewList.length
+                      ]
+                    )
+                  }
+                />
+              </div>
+              {renderedSixSpeakerFrameList}
+              <div>
+                <img
+                  className="arrowIcon"
+                  src="/icons/arrow-right.png"
+                  alt="left"
+                  onClick={() =>
+                    setFocusedFrame(
+                      speakerViewList[
+                        (speakerViewList.findIndex(
+                          (item) => item.id === focusedFrame.id
+                        ) +
+                          1 +
+                          speakerViewList.length) %
+                          speakerViewList.length
+                      ]
+                    )
+                  }
+                />
+              </div>
+            </div>
+          ) : (
+            <div
+              className="ui six column grid container"
+              id="speakerFourColumns"
+            >
+              <div>
+                <img
+                  className="arrowIcon"
+                  src="/icons/arrow-left.png"
+                  alt="left"
+                  onClick={() =>
+                    setFocusedFrame(
+                      speakerViewList[
+                        (speakerViewList.findIndex(
+                          (item) => item.id === focusedFrame.id
+                        ) -
+                          1 +
+                          speakerViewList.length) %
+                          speakerViewList.length
+                      ]
+                    )
+                  }
+                />
+              </div>
+              {renderedFourSpeakerFrameList}
+              <div>
+                <img
+                  className="arrowIcon"
+                  src="/icons/arrow-right.png"
+                  alt="left"
+                  onClick={() =>
+                    setFocusedFrame(
+                      speakerViewList[
+                        (speakerViewList.findIndex(
+                          (item) => item.id === focusedFrame.id
+                        ) +
+                          1 +
+                          speakerViewList.length) %
+                          speakerViewList.length
+                      ]
+                    )
+                  }
+                />
+              </div>
+            </div>
+          )}
 
           <FocusedFrame focusedFrame={focusedFrame} />
         </div>
