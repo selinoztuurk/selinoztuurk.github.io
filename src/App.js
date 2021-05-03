@@ -8,7 +8,7 @@ const App = () => {
   useEffect(() => {
     setTimeout(() => {
       setWaitingRoomActive(false);
-    }, 5000);
+    }, 3000);
   });
 
   return (

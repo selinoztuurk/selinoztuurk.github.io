@@ -63,8 +63,8 @@ const ZoomCall = () => {
         </div>
       </div>
       <div
-        onClick={() => {
-          if (frameMode === 1) {
+        onClick={(event) => {
+          if (frameMode === 1 && !event.target.id.includes("logo")) {
             setFrameMode(0);
           }
         }}

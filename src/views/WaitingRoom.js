@@ -24,13 +24,13 @@ const WaitingRoom = () => {
           style={{ width: `${width < 600 ? "80%" : "30%"}`, height: "auto" }}
         />
         <div style={{ padding: "5px" }}>
-          MAVA 328 Typography Studio Class welcomes you.
+          Please wait, we will soon let you in to
         </div>
         <div style={{ padding: "5px" }}>
-          "Typortraits" Student Works Exhibition, Spring '21
+          the Students Works Exhibition "Typortraits".
         </div>
         <div style={{ padding: "5px", paddingTop: "35px" }}>
-          Please wait. The host will let you in soon.
+          MAVA328 Typography Studio
         </div>
         <div
           className="ui active centered inline loader"
