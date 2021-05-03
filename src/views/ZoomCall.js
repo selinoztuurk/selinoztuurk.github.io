@@ -31,13 +31,17 @@ const ZoomCall = () => {
             fontWeight: 700,
           }}
         >
-          <img
-            className="secureIcon"
-            src={process.env.PUBLIC_URL + "/icons/secure.png"}
-            alt="secure"
-          />
-          <div className="recording"></div>
-          Recording
+          {false ? (
+            <div>
+              <img
+                className="secureIcon"
+                src={process.env.PUBLIC_URL + "/icons/secure.png"}
+                alt="secure"
+              />
+              <div className="recording"></div>
+              Recording
+            </div>
+          ) : null}
         </div>
         <div style={{ marginLeft: "auto" }}>
           <button

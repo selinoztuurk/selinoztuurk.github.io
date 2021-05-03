@@ -96,7 +96,12 @@ const FrameList = ({ frameList, frameMode }) => {
   const FocusedFrame = ({ focusedFrame }) => {
     return (
       <div className="ui container focusedFrameContainer">
-        <div style={{ textAlign: "center", marginTop: "10px" }}>
+        <div
+          style={{
+            textAlign: "center",
+            marginTop: "10px",
+          }}
+        >
           <img
             className="focusedFrameImage"
             src={process.env.PUBLIC_URL + focusedFrame.src}
