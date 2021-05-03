@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/typortraits/static/css/main.f4c94735.chunk.css",
+    "main.css": "/typortraits/static/css/main.3ac7ecae.chunk.css",
     "main.js": "/typortraits/static/js/main.60d4495f.chunk.js",
     "main.js.map": "/typortraits/static/js/main.60d4495f.chunk.js.map",
     "runtime-main.js": "/typortraits/static/js/runtime-main.9e9dd677.js",
@@ -8,13 +8,13 @@
     "static/js/2.3060d2b0.chunk.js": "/typortraits/static/js/2.3060d2b0.chunk.js",
     "static/js/2.3060d2b0.chunk.js.map": "/typortraits/static/js/2.3060d2b0.chunk.js.map",
     "index.html": "/typortraits/index.html",
-    "static/css/main.f4c94735.chunk.css.map": "/typortraits/static/css/main.f4c94735.chunk.css.map",
+    "static/css/main.3ac7ecae.chunk.css.map": "/typortraits/static/css/main.3ac7ecae.chunk.css.map",
     "static/js/2.3060d2b0.chunk.js.LICENSE.txt": "/typortraits/static/js/2.3060d2b0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9e9dd677.js",
     "static/js/2.3060d2b0.chunk.js",
-    "static/css/main.f4c94735.chunk.css",
+    "static/css/main.3ac7ecae.chunk.css",
     "static/js/main.60d4495f.chunk.js"
   ]
 }
