@@ -57,7 +57,7 @@
 }
 
 @media only screen and (min-width: 1200px) {
-  .ui.container.seven #gallery {
+  .ui.container.seven {
     padding-left: 10% !important;
     padding-right: 10% !important;
   }
