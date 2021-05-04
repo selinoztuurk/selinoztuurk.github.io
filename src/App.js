@@ -12,7 +12,7 @@ const App = () => {
   });
 
   return (
-    <div style={{ backgroundColor: "black" }}>
+    <div style={{ backgroundColor: "#101010" }}>
       {waitingRoomActive ? <WaitingRoom /> : <ZoomCall />}
     </div>
   );

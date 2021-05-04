@@ -5,7 +5,7 @@
 
 .focusedFrameContainer {
   width: auto;
-  background-color: black;
+  background-color: #101010;
   display: flex !important;
 }
 
