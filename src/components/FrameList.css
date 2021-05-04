@@ -61,7 +61,7 @@
     padding-left: 10% !important;
     padding-right: 10% !important;
   }
-  .ui.container.container {
+  .ui.container.container #gallery {
     padding-left: 10% !important;
     padding-right: 10% !important;
   }
@@ -73,7 +73,7 @@
     padding-right: 3% !important;
   }
 
-  .ui.grid.container {
+  .ui.grid.container #gallery {
     padding-left: 3% !important;
     padding-right: 3% !important;
   }
@@ -85,7 +85,7 @@
       padding-left: 11% !important;
       padding-right: 11% !important;
     }
-    .ui.grid.container {
+    .ui.grid.container #gallery {
       padding-left: 11% !important;
       padding-right: 11% !important;
     }
