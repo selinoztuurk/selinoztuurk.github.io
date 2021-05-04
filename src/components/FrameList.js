@@ -212,7 +212,7 @@ const FrameList = ({ frameList, frameMode }) => {
           <FocusedFrame focusedFrame={focusedFrame} />
         </div>
       ) : (
-        <div className="ui doubling seven column grid container">
+        <div className="ui doubling seven column grid container" id="gallery">
           {renderedGalleryFrameList}
         </div>
       )}
