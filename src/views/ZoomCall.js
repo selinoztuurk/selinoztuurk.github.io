@@ -4,12 +4,14 @@ import "./ZoomCall.css";
 import galleryViewList from "../galleryViewList";
 import speakerViewList from "../speakerViewList";
 import useWindowSize from "../hooks/useWindowSize";
+import Colophon from "../components/Colophon";
 
 const frameLists = [speakerViewList, galleryViewList];
 
 const ZoomCall = () => {
   const frameModes = { 0: "Speaker View", 1: "Gallery View" };
   const [frameMode, setFrameMode] = useState(1);
+  const [colophonOpen, setColophonOpen] = useState(false);
   const width = useWindowSize()[0];
 
   return (
@@ -44,26 +46,21 @@ const ZoomCall = () => {
           ) : null}
         </div>
         <div style={{ marginLeft: "auto" }}>
-          <button
-            className="ui grey button"
-            onClick={() => setFrameMode((frameMode + 1) % 2)}
-            style={{ fontSize: 12 }}
-          >
-            {frameMode === 0 ? (
-              <img
-                className="viewIcon"
-                src={process.env.PUBLIC_URL + "/icons/view-icon-gallery.png"}
-                alt="view_icon"
-              />
-            ) : (
-              <img
-                className="viewIcon"
-                src={process.env.PUBLIC_URL + "/icons/view-icon-speaker.png"}
-                alt="view_icon"
-              />
-            )}
-            View
-          </button>
+          {frameMode === 0 ? (
+            <img
+              className="viewIcon"
+              src={process.env.PUBLIC_URL + "/icons/view-gallery.png"}
+              onClick={() => setFrameMode((frameMode + 1) % 2)}
+              alt="view_icon"
+            />
+          ) : (
+            <img
+              className="viewIcon"
+              src={process.env.PUBLIC_URL + "/icons/view-speaker.png"}
+              onClick={() => setFrameMode((frameMode + 1) % 2)}
+              alt="view_icon"
+            />
+          )}
         </div>
       </div>
       <div
@@ -79,54 +76,65 @@ const ZoomCall = () => {
         />
       </div>
       <div className="windowBottom">
-        <div className="first" style={{ display: "flex" }}>
-          <img
-            className="bottomIcon"
-            src={process.env.PUBLIC_URL + "/icons/bottom-icon-08.png"}
-            alt="unmute"
-          />
-          <img
-            className="bottomIcon"
-            src={process.env.PUBLIC_URL + "/icons/bottom-icon-09.png"}
-            alt="stopvideo"
-          />
-        </div>
         {width > 750 ? (
-          <div className="second" style={{ display: "flex" }}>
+          <div className="first" style={{ display: "flex" }}>
             <img
               className="bottomIcon"
-              src={process.env.PUBLIC_URL + "/icons/bottom-icon-10.png"}
-              alt="participants"
+              src={process.env.PUBLIC_URL + "/icons/unmute.png"}
+              alt="unmute"
             />
             <img
               className="bottomIcon"
-              src={process.env.PUBLIC_URL + "/icons/bottom-icon-11.png"}
-              alt="chat"
-            />
-            <img
-              className="bottomIcon"
-              src={process.env.PUBLIC_URL + "/icons/bottom-icon-12.png"}
-              alt="sharescreen"
-            />
-            <img
-              className="bottomIcon"
-              src={process.env.PUBLIC_URL + "/icons/bottom-icon-13.png"}
-              alt="record"
-            />
-            <img
-              className="bottomIcon"
-              src={process.env.PUBLIC_URL + "/icons/bottom-icon-14.png"}
-              alt="reactions"
+              src={process.env.PUBLIC_URL + "/icons/start-video.png"}
+              alt="startvideo"
             />
           </div>
         ) : null}
-        <div className="third" style={{ display: "flex" }}>
+        {colophonOpen ? <Colophon /> : null}
+
+        <div className="second" style={{ display: "flex" }}>
           <img
             className="bottomIcon"
-            src={process.env.PUBLIC_URL + "/icons/bottom-icon-15.png"}
-            alt="enjoy"
+            src={process.env.PUBLIC_URL + "/icons/participants.png"}
+            alt="participants"
+            onClick={() => {
+              setColophonOpen(!colophonOpen);
+            }}
+          />
+
+          <img
+            className="bottomIcon"
+            src={process.env.PUBLIC_URL + "/icons/chat.png"}
+            alt="chat"
+          />
+          <img
+            className="bottomIcon"
+            src={process.env.PUBLIC_URL + "/icons/share-screen.png"}
+            alt="sharescreen"
+          />
+
+          <img
+            className="bottomIcon"
+            src={process.env.PUBLIC_URL + "/icons/record.png"}
+            alt="record"
+          />
+
+          <img
+            className="bottomIcon"
+            src={process.env.PUBLIC_URL + "/icons/reactions.png"}
+            alt="reactions"
           />
         </div>
+
+        {width > 750 ? (
+          <div className="third" style={{ display: "flex" }}>
+            <img
+              className="bottomIcon"
+              src={process.env.PUBLIC_URL + "/icons/enjoy.png"}
+              alt="enjoy"
+            />
+          </div>
+        ) : null}
       </div>
     </div>
   );

@@ -56,9 +56,25 @@
   margin-top: 100%;
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 1200px) {
   .ui.container.seven {
-    padding-left: 8% !important;
-    padding-right: 8% !important;
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ui.grid.container {
+    padding-left: 3% !important;
+    padding-right: 3% !important;
+  }
+}
+
+@media not all and (min-resolution: 0.001dpcm) and (min-width: 992px) and (max-width: 1199px) {
+  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+    .ui.grid.container {
+      padding-left: 11% !important;
+      padding-right: 11% !important;
+    }
   }
 }
