@@ -16,36 +16,8 @@ const ZoomCall = () => {
 
   return (
     <div>
-      {false ? (
-        <div className="windowTop">
-          <div className="redDot"></div>
-          <div className="yellowDot"></div>
-          <div className="greenDot"></div>
-        </div>
-      ) : null}
       <div className="upperMenuContainer">
-        <div
-          style={{
-            display: "flex",
-            marginTop: "5px",
-            fontSize: 12,
-            color: "white",
-            fontWeight: 700,
-          }}
-        >
-          {false ? (
-            <div>
-              <img
-                className="secureIcon"
-                src={process.env.PUBLIC_URL + "/icons/secure.png"}
-                alt="secure"
-              />
-              <div className="recording"></div>
-              Recording
-            </div>
-          ) : null}
-        </div>
-        <div style={{ marginLeft: "auto" }}>
+        <div>
           {frameMode === 0 ? (
             <img
               className="viewIcon"

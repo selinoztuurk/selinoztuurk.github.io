@@ -11,7 +11,7 @@
 
 .focusedFrameImage {
   height: auto;
-  width: 60%;
+  width: 70%;
 }
 
 .column {
@@ -42,9 +42,17 @@
     height: auto;
     width: 95%;
   }
-
-  .ui.container.seven {
+  .ui.container.grid.seven {
     padding-bottom: 20% !important;
+  }
+
+  .arrowIcon {
+    height: 25px !important;
+    width: auto;
+    border: none;
+    padding-right: 3px;
+    margin-top: 20% !important;
+    justify-self: flex-start;
   }
 }
 
@@ -56,38 +64,99 @@
   margin-top: 100%;
 }
 
-@media only screen and (min-width: 1200px) {
-  .ui.container.seven {
-    padding-left: 10% !important;
-    padding-right: 10% !important;
+@media only screen and (min-width: 1600px) {
+  .ui.container.grid.seven {
+    width: 70% !important;
   }
-  .ui.container.container #gallery {
-    padding-left: 10% !important;
-    padding-right: 10% !important;
-  }
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .ui.grid.seven {
-    padding-left: 3% !important;
-    padding-right: 3% !important;
-  }
-
-  .ui.grid.container #gallery {
-    padding-left: 3% !important;
-    padding-right: 3% !important;
+  .focusedFrameImage {
+    height: auto;
+    width: 70% !important;
   }
 }
 
-@media not all and (min-resolution: 0.001dpcm) and (min-width: 992px) and (max-width: 1199px) {
+@media only screen and (min-width: 1550px) and (max-width: 1599px) {
+  .ui.container.grid.seven {
+    width: 75% !important;
+  }
+  .focusedFrameImage {
+    height: auto;
+    width: 75% !important;
+  }
+}
+
+@media only screen and (min-width: 1500px) and (max-width: 1549px) {
+  .ui.container.grid.seven {
+    width: 80% !important;
+  }
+  .focusedFrameImage {
+    height: auto;
+    width: 80% !important;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1499px) {
+  .ui.grid.container.seven {
+    width: 90% !important;
+    align-content: center;
+  }
+  .focusedFrameImage {
+    height: auto;
+    width: 90% !important;
+  }
+}
+
+@media not all and (min-resolution: 0.001dpcm) and (min-width: 1600px) {
   @supports (-webkit-appearance: none) and (stroke-color: transparent) {
-    .ui.grid.seven {
-      padding-left: 11% !important;
-      padding-right: 11% !important;
+    .ui.grid.container.seven {
+      width: 70% !important;
     }
-    .ui.grid.container #gallery {
-      padding-left: 11% !important;
-      padding-right: 11% !important;
+    .focusedFrameImage {
+      height: auto;
+      width: 70% !important;
+    }
+  }
+}
+
+@media not all and (min-resolution: 0.001dpcm) and (min-width: 1550px) and (max-width: 1599px) {
+  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+    .ui.grid.container.seven {
+      width: 75% !important;
+    }
+    .focusedFrameImage {
+      height: auto;
+      width: 75% !important;
+    }
+  }
+}
+
+@media not all and (min-resolution: 0.001dpcm) and (min-width: 1500px) and (max-width: 1549px) {
+  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+    .ui.grid.container.seven {
+      width: 80% !important;
+    }
+    .focusedFrameImage {
+      height: auto;
+      width: 80% !important;
+    }
+  }
+}
+
+@media not all and (min-resolution: 0.001dpcm) and (min-width: 992px) and (max-width: 1499px) {
+  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+    .ui.grid.container.seven {
+      width: 70% !important;
+    }
+    .focusedFrameImage {
+      height: auto;
+      width: 70% !important;
+    }
+  }
+}
+
+@media not all and (min-resolution: 0.001dpcm) and (max-width: 600px) {
+  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+    .ui.grid.container.seven {
+      width: auto !important;
     }
   }
 }
