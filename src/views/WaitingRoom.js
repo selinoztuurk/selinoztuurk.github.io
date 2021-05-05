@@ -5,23 +5,28 @@ const WaitingRoom = () => {
   const width = useWindowSize()[0];
 
   return (
-    <div
-      className="ui container"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        color: "white",
-        textAlign: "center",
-        fontSize: "1rem",
-      }}
-    >
-      <div style={{ marginTop: `${width < 600 ? "50%" : "15%"}` }}>
+    <div className="ui container">
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          color: "white",
+          textAlign: "center",
+          fontSize: "1rem",
+          position: "fixed",
+          top: "50%",
+          left: "50%",
+          width: "90%",
+          transform: "translate(-50%, -50%)",
+        }}
+      >
         <img
           className="logo"
           src={process.env.PUBLIC_URL + "/typortraits-logo.png"}
           alt="logo"
-          style={{ width: `${width < 600 ? "80%" : "30%"}`, height: "auto" }}
+          style={{ width: `${width < 600 ? "90%" : "40%"}`, height: "auto" }}
         />
         <div style={{ padding: "5px" }}>
           Please wait, we will soon let you in to

@@ -114,7 +114,13 @@ const FrameList = ({ frameList, frameMode }) => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
       {frameMode === "Speaker View" ? (
         <div>
           {width > 600 ? (

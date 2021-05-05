@@ -5,6 +5,7 @@ import galleryViewList from "../galleryViewList";
 import speakerViewList from "../speakerViewList";
 import useWindowSize from "../hooks/useWindowSize";
 import Colophon from "../components/Colophon";
+import Chat from "../components/Chat";
 
 const frameLists = [speakerViewList, galleryViewList];
 
@@ -12,40 +13,48 @@ const ZoomCall = () => {
   const frameModes = { 0: "Speaker View", 1: "Gallery View" };
   const [frameMode, setFrameMode] = useState(1);
   const [colophonOpen, setColophonOpen] = useState(false);
+  const [chatOpen, setChatOpen] = useState(false);
   const width = useWindowSize()[0];
+
+  function onClickClose() {
+    setColophonOpen(false);
+    setChatOpen(false);
+  }
 
   return (
     <div>
-      <div className="upperMenuContainer">
-        <div>
-          {frameMode === 0 ? (
-            <img
-              className="viewIcon"
-              src={process.env.PUBLIC_URL + "/icons/view-gallery.png"}
-              onClick={() => setFrameMode((frameMode + 1) % 2)}
-              alt="view_icon"
-            />
-          ) : (
-            <img
-              className="viewIcon"
-              src={process.env.PUBLIC_URL + "/icons/view-speaker.png"}
-              onClick={() => setFrameMode((frameMode + 1) % 2)}
-              alt="view_icon"
-            />
-          )}
+      <div style={{ paddingBottom: "6%" }}>
+        <div className="upperMenuContainer">
+          <div>
+            {frameMode === 0 ? (
+              <img
+                className="viewIcon"
+                src={process.env.PUBLIC_URL + "/icons/view-gallery.png"}
+                onClick={() => setFrameMode((frameMode + 1) % 2)}
+                alt="view_icon"
+              />
+            ) : (
+              <img
+                className="viewIcon"
+                src={process.env.PUBLIC_URL + "/icons/view-speaker.png"}
+                onClick={() => setFrameMode((frameMode + 1) % 2)}
+                alt="view_icon"
+              />
+            )}
+          </div>
         </div>
-      </div>
-      <div
-        onClick={(event) => {
-          if (frameMode === 1 && !event.target.id.includes("logo")) {
-            setFrameMode(0);
-          }
-        }}
-      >
-        <FrameList
-          frameList={frameLists[frameMode]}
-          frameMode={frameModes[frameMode]}
-        />
+        <div
+          onClick={(event) => {
+            if (frameMode === 1 && !event.target.id.includes("logo")) {
+              setFrameMode(0);
+            }
+          }}
+        >
+          <FrameList
+            frameList={frameLists[frameMode]}
+            frameMode={frameModes[frameMode]}
+          />
+        </div>
       </div>
       <div className="windowBottom">
         {width > 750 ? (
@@ -62,8 +71,8 @@ const ZoomCall = () => {
             />
           </div>
         ) : null}
-        {colophonOpen ? <Colophon /> : null}
-
+        {colophonOpen ? <Colophon onClickClose={onClickClose} /> : null}
+        {chatOpen ? <Chat onClickClose={onClickClose} /> : null}
         <div className="second" style={{ display: "flex" }}>
           <img
             className="bottomIcon"
@@ -78,6 +87,9 @@ const ZoomCall = () => {
             className="bottomIcon"
             src={process.env.PUBLIC_URL + "/icons/chat.png"}
             alt="chat"
+            onClick={() => {
+              setChatOpen(!chatOpen);
+            }}
           />
           <img
             className="bottomIcon"

@@ -8,11 +8,11 @@ const App = () => {
   useEffect(() => {
     setTimeout(() => {
       setWaitingRoomActive(false);
-    }, 3000);
+    }, 4000);
   });
 
   return (
-    <div style={{ backgroundColor: "#101010" }}>
+    <div style={{ backgroundColor: "#101010", fontFamily: "Lato" }}>
       {waitingRoomActive ? <WaitingRoom /> : <ZoomCall />}
     </div>
   );
