@@ -3,6 +3,12 @@
   justify-content: center;
 }
 
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .focusedFrameContainer {
   width: auto;
   background-color: #101010;
@@ -49,6 +55,9 @@
     padding-right: 3px;
     margin-top: 20% !important;
     justify-self: flex-start;
+  }
+  .ui.container.seven {
+    padding-bottom: 15% !important;
   }
 }
 
@@ -100,62 +109,8 @@
   }
 }
 
-/*@media not all and (min-resolution: 0.001dpcm) and (min-width: 1600px) {
-  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
-    .ui.grid.container.seven {
-      width: 70% !important;
-    }
-    .focusedFrameImage {
-      height: auto;
-      width: 70% !important;
-    }
+@media only screen and (min-width: 600px) and (max-width: 991px) {
+  .ui.grid.container.seven {
+    padding-bottom: 15% !important;
   }
 }
-
-@media not all and (min-resolution: 0.001dpcm) and (min-width: 1550px) and (max-width: 1599px) {
-  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
-    .ui.grid.container.seven {
-      width: 75% !important;
-    }
-    .focusedFrameImage {
-      height: auto;
-      width: 75% !important;
-    }
-  }
-}
-
-@media not all and (min-resolution: 0.001dpcm) and (min-width: 1500px) and (max-width: 1549px) {
-  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
-    .ui.grid.container.seven {
-      width: 80% !important;
-    }
-    .focusedFrameImage {
-      height: auto;
-      width: 80% !important;
-    }
-  }
-}
-
-@media not all and (min-resolution: 0.001dpcm) and (min-width: 992px) and (max-width: 1499px) {
-  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
-    .ui.grid.container.seven {
-      width: 70% !important;
-    }
-    .focusedFrameImage {
-      height: auto;
-      width: 70% !important;
-    }
-  }
-}
-
-@media not all and (min-resolution: 0.001dpcm) and (min-width: 0px) and (max-width: 991px) {
-  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
-    .ui.grid.container.seven {
-      width: auto !important;
-    }
-    .focusedFrameImage {
-      height: auto;
-      width: 70% !important;
-    }
-  }
-}*/

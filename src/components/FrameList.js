@@ -114,13 +114,7 @@ const FrameList = ({ frameList, frameMode }) => {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-      }}
-    >
+    <div className="mainContainer">
       {frameMode === "Speaker View" ? (
         <div>
           {width > 600 ? (

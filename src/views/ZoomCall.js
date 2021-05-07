@@ -79,6 +79,7 @@ const ZoomCall = () => {
             src={process.env.PUBLIC_URL + "/icons/participants.png"}
             alt="participants"
             onClick={() => {
+              setChatOpen(false);
               setColophonOpen(!colophonOpen);
             }}
           />
@@ -88,6 +89,7 @@ const ZoomCall = () => {
             src={process.env.PUBLIC_URL + "/icons/chat.png"}
             alt="chat"
             onClick={() => {
+              setColophonOpen(false);
               setChatOpen(!chatOpen);
             }}
           />

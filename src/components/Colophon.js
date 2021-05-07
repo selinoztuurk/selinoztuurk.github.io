@@ -19,15 +19,15 @@ const Colophon = ({ onClickClose }) => {
         <br />
         <div className="boldTypeColophon">exhibition design</div>
         <div className="regularType">
-          berre su yanlıç
+          berre su yanlıç
           <br />
           cemre sönmez
           <br />
           ipek köprülülü
           <br />
-          melisa erşan
+          melisa erşan
           <br />
-          öykü göç
+          öykü göç
         </div>
         <br />
         <div className="boldTypeColophon">web design/development</div>
@@ -38,9 +38,9 @@ const Colophon = ({ onClickClose }) => {
         <br />
         <div className="boldTypeColophon">retouch team</div>
         <div className="regularType">
-          aleyna çatak
+          aleyna çatak
           <br />
-          anıl yanıkçıoğlu
+          anıl yanıkçıoğlu
           <br />
           asya günen
           <br />

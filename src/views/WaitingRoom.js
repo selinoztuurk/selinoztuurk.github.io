@@ -29,13 +29,13 @@ const WaitingRoom = () => {
           style={{ width: `${width < 600 ? "90%" : "40%"}`, height: "auto" }}
         />
         <div style={{ padding: "5px" }}>
-          Please wait, we will soon let you in to
+          Please wait, we will soon let you in to the
         </div>
         <div style={{ padding: "5px" }}>
-          the Students Works Exhibition "Typortraits".
+          Students Works Exhibition "Typortraits".
         </div>
         <div style={{ padding: "5px", paddingTop: "35px" }}>
-          MAVA328 Typography Studio
+          MAVA 328 Typography Studio
         </div>
         <div
           className="ui active centered inline loader"
